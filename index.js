@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import cors from "cors"
 import dbConnected from "./dbConfig/dbConfig.js"
 import userRouter from "./routes/user.route.js"
+import expensesRouter from "./routes/expenses.route.js"
 dotenv.config()
 
 const port = process.env.PORT || 3000
@@ -11,6 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/user", userRouter)
+app.use("/expenses", expensesRouter)
 
 app.listen(port, async()=>{
     await dbConnected()

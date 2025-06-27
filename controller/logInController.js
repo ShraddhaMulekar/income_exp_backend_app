@@ -13,12 +13,15 @@ const logInController = async (req, res) => {
         if (err) {
           return res.json({ msg: "error here", err });
         } else if (result) {
+
           const payload = {
             userId: matchEmail.id,
             userName: matchEmail.userName,
           };
+
           const token = jwt.sign(payload, process.env.SECREATEKEY);
           return res.json({ msg: "Log in successful!", token });
+          
         } else {
           return res.json({ msg: "invalid password.." });
         }
