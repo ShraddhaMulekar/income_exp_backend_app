@@ -13,10 +13,12 @@ const createExpController = async (req, res) => {
       date,
       user: req.user.id,
     });
+
     await newExp.save();
     return res.json({ msg: "new expense created successfully!" });
+
   } catch (error) {
-    console.log("error in create exp controller!", error);
+    // console.log("error in create exp controller!", error);
     return res.json({ msg: "error in create exp controller!", error });
   }
 };

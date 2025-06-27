@@ -4,7 +4,7 @@ const LogOutController = async(req, res)=>{
     const token = req.headers.authorization?.split(" ")[1]
 
     if(!token){
-        return res.json({msg:"access denined!"})
+        return res.json({msg:"access declined!"})
     }
 
     await LogOutModel.create({token})

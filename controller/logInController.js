@@ -9,7 +9,7 @@ const logInController = async (req, res) => {
     if (!matchEmail) {
       return res.json({ msg: "email id not registered. please sign in now!" });
     } else {
-      bcrypt.compare(password, matchEmail.password, async (err, result) => {
+      bcrypt.compare(password, matchEmail.password, (err, result) => {
         if (err) {
           return res.json({ msg: "error here", err });
         } else if (result) {
