@@ -8,7 +8,7 @@ const ExpenseSchema = new mongoose.Schema(
     notes: { type: String },
     type: {
       type: String,
-      enum: ["Expenses", "Income", "Other"],
+      enum: ["Expenses", "Income"],
       default: "Expenses",
     },
     payment: {
@@ -18,6 +18,7 @@ const ExpenseSchema = new mongoose.Schema(
     },
     date: { type: Date, default: Date.now() },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    recurring : {type: String}
   },
   {
     versionKey: false,

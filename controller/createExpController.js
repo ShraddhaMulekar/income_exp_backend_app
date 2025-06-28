@@ -1,12 +1,13 @@
 import ExpenseModel from "../models/expenses.model.js";
 
 const createExpController = async (req, res) => {
-  const { title, amount, category, notes, payment, date, type } = req.body;
+  const { title, amount, category, notes, payment, date, type,recurring } = req.body;
   try {
     const newExp = await ExpenseModel.create({
       title,
       type,
       amount,
+      recurring,
       category,
       notes,
       payment,
