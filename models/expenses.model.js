@@ -13,7 +13,7 @@ const ExpenseSchema = new mongoose.Schema(
     },
     payment: {
       type: String,
-      enum: ["Bank", "CacheStorage", "Other"],
+      enum: ["Bank", "Cash"],
       default: "Bank",
     },
     date: { type: Date, default: Date.now() },
