@@ -45,7 +45,6 @@ const checkExpController = async (req, res) => {
     const expense = ("total:", total, "pageSize:", pageSize, "exp:", checkExp);
 
     return res.json({ msg: "All expenses are:", expense, page: pageNumber });
-
   } catch (error) {
     return res.json({ msg: "error in check expenses controller", error });
   }

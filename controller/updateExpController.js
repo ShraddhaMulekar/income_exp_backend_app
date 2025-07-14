@@ -24,7 +24,6 @@ const updateExpController = async (req, res) => {
 
     updateExp.save();
     return res.json({ msg: "updated successful!", updateExp });
-
   } catch (error) {
     console.log("error in update expenses controller", error);
     return res.json({ msg: "error in update expenses controller", error });

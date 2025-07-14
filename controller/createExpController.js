@@ -1,7 +1,8 @@
 import ExpenseModel from "../models/expenses.model.js";
 
 const createExpController = async (req, res) => {
-  const { title, amount, category, notes, payment, date, type,recurring } = req.body;
+  const { title, amount, category, notes, payment, date, type, recurring } =
+    req.body;
   try {
     const newExp = await ExpenseModel.create({
       title,
@@ -16,8 +17,7 @@ const createExpController = async (req, res) => {
     });
 
     await newExp.save();
-    return res.json({ msg: "new expense created successfully!" });
-
+    return res.json({ msg: `new ${type} created successfully!` });
   } catch (error) {
     console.log("error in create exp controller!", error);
     return res.json({ msg: "error in create exp controller!", error });
