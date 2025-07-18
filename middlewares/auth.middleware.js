@@ -14,7 +14,7 @@ const authMiddleware = (req, res, next) => {
     req.user = { id: decoded.userId };
     next();
   } catch (error) {
-    return res.json({ msg: "error in auth middleware", error });
+    return res.json({ msg: "Please registered now!", error });
   }
 };
 

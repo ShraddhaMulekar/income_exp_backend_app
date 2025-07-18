@@ -20,7 +20,7 @@ const createExpController = async (req, res) => {
     return res.json({ msg: `new ${type} created successfully!` });
   } catch (error) {
     console.log("error in create exp controller!", error);
-    return res.json({ msg: "error in create exp controller!", error });
+    return res.json({ msg: "all feilds are required!", error });
   }
 };
 

@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const ExpenseSchema = new mongoose.Schema(
   {
-    title: { type: String },
-    category: { type: String },
-    amount: { type: Number },
-    notes: { type: String },
+    title: { type: String,  required: true },
+    category: { type: String,  required: true },
+    amount: { type: Number,  required: true },
+    notes: { type: String,  required: true },
     type: {
       type: String,
       enum: ["Expenses", "Income"],
